@@ -1,4 +1,4 @@
-public class OracleInterviewProgram {
+public class InterviewProgram {
 
     public static void main(String[] args) {
 
