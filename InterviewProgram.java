@@ -1,3 +1,15 @@
+/**
+ * Approach for encryption of any given text
+ *
+ * 1. Remove space form the text using replaceAll() method
+ * 2. Use Math functions, Get the floor and ceil value of SQRT of text length and assign them row and column variables
+ * 3. Make Sure Row & Column should follow these instructions
+ *      a. [PRESQRT(L)] <= R <= C <= [POSTSQRT(L)]
+ *      b.  R * C >= L
+ * 4. Map all the characters of text row wise to 2 dimensional matrix
+ * 5. Print encrypted text obtained by joining the characters in each column and separated by space
+ */
+
 public class OracleInterviewProgram {
 
     public static void main(String[] args) {
