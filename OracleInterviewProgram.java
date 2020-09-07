@@ -2,31 +2,37 @@ public class OracleInterviewProgram {
 
     public static void main(String[] args) {
 
-        String str = "the black cat jumped on the roofing king thujin ffsif";
+        String str = "chill out";
 
-        // Call the replaceAll() method
+        // Remove Spaces the replaceAll() method
         str = str.replaceAll("\\s", "");
 
-        System.out.println("String Update..."+str);
-        System.out.println("String lentgh..."+str.length());
-
+        
         int l = str.length();
         int k = 0, row, column;
+        
+        //square root of largest perfect square number less than or equals to L
         row = (int) Math.floor(Math.sqrt(l));
+        //square root of smallest perfect square number greater than or equals to L
         column = (int) Math.ceil(Math.sqrt(l));
 
-        System.out.println("Row..."+row);
-        System.out.println("Column..."+column);
-
+        // Row * Column >= L
         if (row * column < l)
         {
-            row = column;
+            if (Math.min(column, row) == column)
+            {
+                column = column + 1;
+            }
+            else
+            {
+                row = row + 1;
+            }
         }
 
 
         char s[][] = new char[row][column];
 
-        // convert the string into grid
+        // convert the string into matrix
         for (int i = 0; i < row; i++)
         {
             for (int j = 0; j < column; j++)
@@ -37,18 +43,20 @@ public class OracleInterviewProgram {
             }
         }
 
-        // Printing the grid
-        for (int i = 0; i < row; i++)
+        // Printing the matrix Column wise to get encrypted String
+        for (int i = 0; i < column; i++)
         {
-            for (int j = 0; j < column; j++)
+            for (int j = 0; j < row; j++)
             {
-                if (s[i][j] == 0)
+                if (s[j][i] == 0)
                 {
                     break;
                 }
-                System.out.print(s[i][j]);
+                System.out.print(s[j][i]);
             }
-            System.out.println("");
+            System.out.print(" ");
         }
+
+
     }
 }
